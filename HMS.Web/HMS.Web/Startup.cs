@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using HMS.EntityFramework;
+using Microsoft.EntityFrameworkCore;
 
 namespace HMS.Web
 {
@@ -30,7 +32,8 @@ namespace HMS.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            var sqlConnection = Configuration.GetConnectionString("SqlServerConnection");
+            services.AddDbContext<HMSDbContext>(options => options.UseSqlServer(sqlConnection));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
