@@ -11,6 +11,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using HMS.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using HMS.AutoMapper.SystemModule;
+using Autofac;
+using HMS.Common.Ioc;
+using System.Reflection;
+using Autofac.Extensions.DependencyInjection;
 
 namespace HMS.Web
 {
@@ -19,12 +24,14 @@ namespace HMS.Web
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //程序启动时注册实体对应Dto的映射关系
+            SystemProfile.Initialize();
         }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -36,6 +43,24 @@ namespace HMS.Web
             services.AddDbContext<HMSDbContext>(options => options.UseSqlServer(sqlConnection));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //AutoFac依赖注入
+            ContainerBuilder builder = new ContainerBuilder();
+            Type baseType = typeof(IDependency);
+
+            // 获取所有相关类库的程序集
+            //Assembly[] assemblies = Assembly.Load();
+
+            builder.RegisterAssemblyTypes(Assembly.Load("HMS.EntityFramework"))
+                .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
+                .AsImplementedInterfaces().InstancePerLifetimeScope();//InstancePerLifetimeScope 保证对象生命周期基于请求
+            builder.RegisterAssemblyTypes(Assembly.Load("HMS.Application"))
+               .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
+               .AsImplementedInterfaces().InstancePerLifetimeScope();
+            builder.RegisterAssemblyTypes(Assembly.Load("HMS.Domin"))
+               .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
+               .AsImplementedInterfaces().InstancePerLifetimeScope();
+            IContainer container = builder.Build();
+            return new AutofacServiceProvider(container);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

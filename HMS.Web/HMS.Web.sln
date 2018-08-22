@@ -5,11 +5,17 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.Web", "HMS.Web\HMS.Web.csproj", "{2CA31931-7976-46DE-8918-F49CAAB19EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Domin", "HMS.Manager\HMS.Domin.csproj", "{011616B7-5145-44EE-92AB-AA86229C8A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.Domin", "HMS.Manager\HMS.Domin.csproj", "{011616B7-5145-44EE-92AB-AA86229C8A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Application", "HMS\HMS.Application.csproj", "{3ECE5886-8F37-47F1-8423-E9C795B4CC05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.Application", "HMS\HMS.Application.csproj", "{3ECE5886-8F37-47F1-8423-E9C795B4CC05}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.EntityFramework", "HMS.EntityFramework\HMS.EntityFramework.csproj", "{B66819F6-32D3-40DD-B96F-86D690A1C4A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Common", "HMS.Common\HMS.Common.csproj", "{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.AutoMapper", "HMS.AutoMapper\HMS.AutoMapper.csproj", "{01E140C1-77EF-4253-B94E-C1C371338979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HME.Model", "HME.Model\HME.Model.csproj", "{B069F438-6DBA-4B02-B828-81F0081F448B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{B66819F6-32D3-40DD-B96F-86D690A1C4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B66819F6-32D3-40DD-B96F-86D690A1C4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B66819F6-32D3-40DD-B96F-86D690A1C4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01E140C1-77EF-4253-B94E-C1C371338979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E140C1-77EF-4253-B94E-C1C371338979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E140C1-77EF-4253-B94E-C1C371338979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E140C1-77EF-4253-B94E-C1C371338979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B069F438-6DBA-4B02-B828-81F0081F448B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B069F438-6DBA-4B02-B828-81F0081F448B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B069F438-6DBA-4B02-B828-81F0081F448B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B069F438-6DBA-4B02-B828-81F0081F448B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

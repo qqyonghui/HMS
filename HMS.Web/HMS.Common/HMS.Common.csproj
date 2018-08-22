@@ -8,9 +8,4 @@
     <PackageReference Include="AutoMapper" Version="7.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HMS.Common\HMS.Common.csproj" />
-    <ProjectReference Include="..\HMS.EntityFramework\HMS.EntityFramework.csproj" />
-  </ItemGroup>
-
 </Project>
