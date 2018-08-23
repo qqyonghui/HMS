@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
-using HMS.Domin.SystemModule.Dto;
+using HME.Model.SystemModel;
 using HMS.Domin.SystemModule.Input;
-using HMS.Domin.SystemModule.Interface;
 using HMS.EntityFramework;
 using System;
 using System.Collections.Generic;

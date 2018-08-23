@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.Application", "HMS\HMS.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.EntityFramework", "HMS.EntityFramework\HMS.EntityFramework.csproj", "{B66819F6-32D3-40DD-B96F-86D690A1C4A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Common", "HMS.Common\HMS.Common.csproj", "{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.Common", "HMS.Common\HMS.Common.csproj", "{AFB46CB8-D5C2-4841-BEC2-7A1842B7A2B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.AutoMapper", "HMS.AutoMapper\HMS.AutoMapper.csproj", "{01E140C1-77EF-4253-B94E-C1C371338979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HMS.AutoMapper", "HMS.AutoMapper\HMS.AutoMapper.csproj", "{01E140C1-77EF-4253-B94E-C1C371338979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HME.Model", "HME.Model\HME.Model.csproj", "{B069F438-6DBA-4B02-B828-81F0081F448B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HME.Model", "HME.Model\HME.Model.csproj", "{B069F438-6DBA-4B02-B828-81F0081F448B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
