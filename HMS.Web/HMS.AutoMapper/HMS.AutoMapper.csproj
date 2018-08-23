@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HME.Model\HME.Model.csproj" />
+    <ProjectReference Include="..\HMS.EntityFramework\HMS.EntityFramework.csproj" />
+  </ItemGroup>
+
 </Project>

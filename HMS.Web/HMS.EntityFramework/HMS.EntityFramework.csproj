@@ -15,4 +15,8 @@
     <Folder Include="DBComm\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HMS.Common\HMS.Common.csproj" />
+  </ItemGroup>
+
 </Project>

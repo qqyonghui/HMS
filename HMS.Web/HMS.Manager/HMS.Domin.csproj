@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HME.Model\HME.Model.csproj" />
     <ProjectReference Include="..\HMS.Common\HMS.Common.csproj" />
     <ProjectReference Include="..\HMS.EntityFramework\HMS.EntityFramework.csproj" />
   </ItemGroup>
