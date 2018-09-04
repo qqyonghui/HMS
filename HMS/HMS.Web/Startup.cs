@@ -50,6 +50,7 @@ namespace HMS.Web
             // 获取所有相关类库的程序集
             //Assembly[] assemblies = Assembly.Load();
 
+
             builder.RegisterAssemblyTypes(Assembly.Load("HMS.EntityFramework"))
                 .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
                 .AsImplementedInterfaces().InstancePerLifetimeScope();//InstancePerLifetimeScope 保证对象生命周期基于请求
@@ -59,7 +60,9 @@ namespace HMS.Web
             builder.RegisterAssemblyTypes(Assembly.Load("HMS.Domin"))
                .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
                .AsImplementedInterfaces().InstancePerLifetimeScope();
+            builder.Populate(services);
             IContainer container = builder.Build();
+            
             return new AutofacServiceProvider(container);
         }
 

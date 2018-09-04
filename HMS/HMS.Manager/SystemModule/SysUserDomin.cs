@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HME.Model.SystemModel;
+using HMS.Common.Helper;
 using HMS.Domin.SystemModule.Input;
 using HMS.EntityFramework;
 using System;
@@ -25,7 +26,14 @@ namespace HMS.Domin.SystemModule
 
         public bool Login(SysUserInput input)
         {
-            return _dbContext.SysUser.Any(p => p.TenantId == input.TenantId && p.LoginName == p.LoginName && p.Password == input.Password);
+           return _dbContext.SysUser.Join(_dbContext.Tenants, user => user.TenantId, tenant => tenant.Id, (user, tenant) => new SysUserDto
+            {
+                LoginName=user.LoginName,
+                Password=user.Password,
+                TenantName=tenant.Name
+
+            }).Any(p=>p.LoginName==input.LogName&&p.Password==MD5Helper.MD5Encrypt(input.Password)&&p.TenantName==input.TenantName);
+            //return _dbContext.SysUser.Any(p => p.TenantId == input.TenantId && p.LoginName == p.LoginName && p.Password == input.Password);
         }
     }
 }

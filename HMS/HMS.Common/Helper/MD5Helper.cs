@@ -9,9 +9,10 @@ namespace HMS.Common.Helper
     {
         public static string MD5Encrypt(string text)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] result = md5.ComputeHash(System.Text.Encoding.Default.GetBytes(text));
-            return System.Text.Encoding.Default.GetString(result);
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            string result = BitConverter.ToString(md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(text)));
+            result = result.Replace("-", "");
+            return result;
         }
     }
 }

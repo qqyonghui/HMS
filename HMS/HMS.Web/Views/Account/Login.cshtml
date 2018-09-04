@@ -14,36 +14,59 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <link href="~/css/login.css" rel="stylesheet" />
     <title>系统登录</title>
-    <!-- Bootstrap core CSS -->
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="~/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link href="~/css/system/signin.css" rel="stylesheet" />
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="~/js/ie-emulation-modes-warning.js"></script>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+    <script>
+        $(document).ready(function () { 
+            $("#btn_login").click(function () { 
+                $.post("Account/login", { loginName: $("#username").val(), password: $("#password").val(), tantent: $("#tantent").val() }, function (value) {
+                    if (value == "True") { 
+                        alert("登录成功");
+                    }
+                });
+            });
+        })
+    </script>
 </head>
 <body>
-    <div class="container">
-        <form class="form-signin">
-            <h2 class="form-signin-heading">欢迎回来</h2>
-            <label for="txtTenant" class="sr-only">租户名</label>
-            <input type="text" id="txtTenant" class="form-control" placeholder="租户名">
-            <label for="loginName" class="sr-only">用户名</label>
-            <input type="text" id="loginName" class="form-control" placeholder="用户名" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+    <div class="login_box">
+        <div class="login_l_img"><img src="~/images/login-img.png" /></div>
+        <div class="login">
+            <div class="login_logo"><a href="#"><img src="~/images/login_logo.png" /></a></div>
+            <div class="login_name">
+                <p>后台管理系统</p>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-    </div> <!-- /container -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="~/js/ie10-viewport-bug-workaround.js"></script>
+            <div>
+                <input id="tantent" name="tantent" type="text" value="租户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='租户名'}" />
+                <input id="username" name="username" type="text" value="用户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='用户名'}">
+                <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();">密码</span>
+                <input name="password" type="password" id="password" style="display:none;" onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};" />
+                <input id="btn_login" value="登录" style="width:100%;" type="button">
+            </div>
+        </div>
+        <div class="copyright">某某有限公司 版权所有©2016-2018 技术支持电话：000-00000000</div>
+    </div>
+    <div style="text-align:center;">
+    </div>
 </body>
 </html>

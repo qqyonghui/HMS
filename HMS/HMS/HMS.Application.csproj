@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HMS.Common\HMS.Common.csproj" />
+    <ProjectReference Include="..\HMS.Manager\HMS.Domin.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,5 +13,7 @@ namespace HMS.Domin.SystemModule.Input
         public string Password { get; set; }
 
         public Guid TenantId { get; set; }
+        
+        public string TenantName { get; set; }
     }
 }

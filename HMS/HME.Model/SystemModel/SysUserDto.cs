@@ -18,5 +18,6 @@ namespace HME.Model.SystemModel
         public DateTime lastLoginTime { get; set; }
 
         public string PhoneNumber { get; set; }
+        public string TenantName { get; set; }
     }
 }

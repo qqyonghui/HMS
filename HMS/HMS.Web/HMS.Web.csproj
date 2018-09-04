@@ -14,7 +14,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HMS.AutoMapper\HMS.AutoMapper.csproj" />
+    <ProjectReference Include="..\HMS.Common\HMS.Common.csproj" />
     <ProjectReference Include="..\HMS.EntityFramework\HMS.EntityFramework.csproj" />
+    <ProjectReference Include="..\HMS\HMS.Application.csproj" />
   </ItemGroup>
 
 </Project>
