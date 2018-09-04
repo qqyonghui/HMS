@@ -1,28 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - HMS.Web</title>
+    <title></title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="~/css/custom-styles.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
 
-    <environment include="Development">
-        <link href="~/css/bootstrap.css" rel="stylesheet" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link href="~/css/custom-styles.css" rel="stylesheet" />
-        <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
-        <link href="~/css/font-awesome.css" rel="stylesheet" />
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <link href="~/css/custom-styles.css" rel="stylesheet" />
-        <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
-        <link href="~/css/font-awesome.css" rel="stylesheet" />
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    </environment>
 </head>
 <body>
     <div id="wrapper">
@@ -249,13 +241,14 @@
                 <!-- /.dropdown -->
             </ul>
         </nav>
+        <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
@@ -303,66 +296,40 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a class="active-menu" href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
                 </ul>
 
             </div>
 
         </nav>
-        @*<div class="navbar-nav nav">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-            </ul>
-        </div>*@
-        @*<partial name="_CookieConsentPartial" />*@
+        <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        @RenderBody()
+                        <h1 class="page-header">
+                            Empty Page <small>Create new page.</small>
+                        </h1>
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                
+                <footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p></footer>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->
-        @*<div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2018 - HMS.Web</p>
-            </footer>
-        </div>*@
     </div>
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="~/lib/customer/jquery.metisMenu.js"></script>
-        <script src="~/lib/customer/custom-scripts.js"></script>
+    <!-- /. WRAPPER  -->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/customer/jquery.metisMenu.js"></script>
+    <script src="~/lib/morris/raphael-2.1.0.min.js"></script>
+    <script src="~/lib/morris/morris.js"></script>
+    <script src="~/lib/customer/custom-scripts.js"></script>
 
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
 
-    @RenderSection("Scripts", required: false)
 </body>
 </html>
+

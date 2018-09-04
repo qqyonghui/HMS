@@ -24,15 +24,20 @@ namespace HMS.Domin.SystemModule
             return Mapper.Map<List<SysUserDto>>(userList);
         }
 
-        public bool Login(SysUserInput input)
+        public SysUserDto Login(SysUserInput input)
         {
            return _dbContext.SysUser.Join(_dbContext.Tenants, user => user.TenantId, tenant => tenant.Id, (user, tenant) => new SysUserDto
             {
                 LoginName=user.LoginName,
                 Password=user.Password,
-                TenantName=tenant.Name
+                TenantName=tenant.Name,
+                Gender=user.Gender,
+                PhoneNumber=user.PhoneNumber,
+                UserName=user.UserName,
+                TenantId=tenant.Id,
+                RoleId=user.RoleId
 
-            }).Any(p=>p.LoginName==input.LogName&&p.Password==MD5Helper.MD5Encrypt(input.Password)&&p.TenantName==input.TenantName);
+            }).FirstOrDefault(p=>p.LoginName==input.LogName&&p.Password==MD5Helper.MD5Encrypt(input.Password)&&p.TenantName==input.TenantName);
             //return _dbContext.SysUser.Any(p => p.TenantId == input.TenantId && p.LoginName == p.LoginName && p.Password == input.Password);
         }
     }

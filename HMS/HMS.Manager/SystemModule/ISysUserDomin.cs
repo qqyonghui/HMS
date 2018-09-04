@@ -13,6 +13,6 @@ namespace HMS.Domin.SystemModule
     {
         List<SysUserDto> GetSysUserList(SysUserInput input);
 
-        bool Login(SysUserInput input);
+        SysUserDto Login(SysUserInput input);
     }
 }

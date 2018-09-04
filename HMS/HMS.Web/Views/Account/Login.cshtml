@@ -39,9 +39,9 @@
     <script>
         $(document).ready(function () { 
             $("#btn_login").click(function () { 
-                $.post("Account/login", { loginName: $("#username").val(), password: $("#password").val(), tantent: $("#tantent").val() }, function (value) {
-                    if (value == "True") { 
-                        alert("登录成功");
+                $.post("/Account/login", { loginName: $("#username").val(), password: $("#password").val(), tantent: $("#tantent").val() }, function (value) {
+                    if (value == "True") {
+                        window.location.href = "/system/system/index";
                     }
                 });
             });

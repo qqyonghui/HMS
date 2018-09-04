@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HME.Model.SystemModel;
 using HMS.Application.SystemModule;
+using HMS.Common.Helper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HMS.Web.Controllers
@@ -21,8 +23,13 @@ namespace HMS.Web.Controllers
         [HttpPost]
         public IActionResult Login(string loginName, string password, string tantent)
         {
-            bool result = _sysUserService.Login( loginName, password, tantent);
-            return Content(result.ToString());
+            SysUserDto currentUser = _sysUserService.Login( loginName, password, tantent);
+            if (currentUser!=null)
+            {
+                HttpContext.Session.Set("CurrentUser", ByteConvertHelper.Object2Bytes(currentUser));
+                return Content(true.ToString());
+            }
+            return Content(false.ToString());
         }
     }
 }

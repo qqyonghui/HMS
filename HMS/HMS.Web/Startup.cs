@@ -43,6 +43,8 @@ namespace HMS.Web
             services.AddDbContext<HMSDbContext>(options => options.UseSqlServer(sqlConnection));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //session服务
+            services.AddSession();
             //AutoFac依赖注入
             ContainerBuilder builder = new ContainerBuilder();
             Type baseType = typeof(IDependency);
@@ -82,9 +84,14 @@ namespace HMS.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            //session
+            app.UseSession();
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=System}/{action=Index}/{id?}"
+                  );
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Account}/{action=Login}/{id?}");
