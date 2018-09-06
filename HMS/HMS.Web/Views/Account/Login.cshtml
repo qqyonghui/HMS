@@ -41,7 +41,7 @@
             $("#btn_login").click(function () { 
                 $.post("/Account/login", { loginName: $("#username").val(), password: $("#password").val(), tantent: $("#tantent").val() }, function (value) {
                     if (value == "True") {
-                        window.location.href = "/system/system/index";
+                        window.location.href = "/home/main";
                     }
                 });
             });

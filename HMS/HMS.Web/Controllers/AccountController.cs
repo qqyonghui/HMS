@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using HME.Model.SystemModel;
 using HMS.Application.SystemModule;
 using HMS.Common.Helper;
+using HMS.Domin.SystemModule.Input;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HMS.Web.Controllers
@@ -21,9 +22,9 @@ namespace HMS.Web.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(string loginName, string password, string tantent)
+        public IActionResult Login(SysUserInput input)
         {
-            SysUserDto currentUser = _sysUserService.Login( loginName, password, tantent);
+            SysUserDto currentUser = _sysUserService.Login(input.LoginName, input.Password, input.TenantName);
             if (currentUser!=null)
             {
                 HttpContext.Session.Set("CurrentUser", ByteConvertHelper.Object2Bytes(currentUser));

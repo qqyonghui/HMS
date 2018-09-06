@@ -8,7 +8,7 @@ namespace HMS.Domin.SystemModule.Input
     {
         public Guid Id { get; set; }
 
-        public string LogName { get; set; }
+        public string LoginName { get; set; }
 
         public string Password { get; set; }
 

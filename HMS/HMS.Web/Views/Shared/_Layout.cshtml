@@ -7,10 +7,11 @@
 
     <environment include="Development">
         <link href="~/css/bootstrap.css" rel="stylesheet" />
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link href="~/css/custom-styles.css" rel="stylesheet" />
-        <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="~/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/morris/morris-0.4.3.min.css" rel="stylesheet" />
+
+        <link href="~/css/custom-styles.css" rel="stylesheet" />
+
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </environment>
     <environment exclude="Development">
@@ -19,7 +20,6 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link href="~/css/custom-styles.css" rel="stylesheet" />
-        <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
         <link href="~/css/font-awesome.css" rel="stylesheet" />
         <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </environment>
@@ -255,7 +255,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" asp-area="System" asp-controller="System" asp-action="UserManager"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
@@ -320,13 +320,9 @@
         @*<partial name="_CookieConsentPartial" />*@
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        @RenderBody()
-                    </div>
-                </div>
+                @RenderBody()
                 <!-- /. ROW  -->
-                
+
             </div>
             <!-- /. PAGE INNER  -->
         </div>

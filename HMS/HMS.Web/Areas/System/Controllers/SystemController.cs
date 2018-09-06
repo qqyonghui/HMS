@@ -14,5 +14,9 @@ namespace HMS.Web.Areas.System.Controllers
         {
             return View();
         }
+        public IActionResult UserManager()
+        {
+            return View();
+        }
     }
 }

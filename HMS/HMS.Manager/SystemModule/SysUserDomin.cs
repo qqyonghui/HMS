@@ -37,7 +37,7 @@ namespace HMS.Domin.SystemModule
                 TenantId=tenant.Id,
                 RoleId=user.RoleId
 
-            }).FirstOrDefault(p=>p.LoginName==input.LogName&&p.Password==MD5Helper.MD5Encrypt(input.Password)&&p.TenantName==input.TenantName);
+            }).FirstOrDefault(p=>p.LoginName==input.LoginName&&p.Password==MD5Helper.MD5Encrypt(input.Password));
             //return _dbContext.SysUser.Any(p => p.TenantId == input.TenantId && p.LoginName == p.LoginName && p.Password == input.Password);
         }
     }
