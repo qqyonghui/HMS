@@ -617,5 +617,23 @@ font-size: 19px;
   margin: 14px;
 }
 }
+.panel-box {
+    cursor: pointer;
+}
+.panel-title {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-orient: vertical;
+    text-align: center
+}
+.panel-h4 {
+    display: flex;
+    text-align: center;
+}
+    .panel-h4 span {
+        margin: auto;
+        color:darkgray;
+    }
 
 

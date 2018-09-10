@@ -1,4 +1,4 @@
-/**!
+﻿/**!
  * easyPieChart
  * Lightweight plugin to render simple, animated and retina optimized pie charts
  *

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Http;
 
 namespace HMS.Web.Controllers
 {
@@ -11,9 +12,9 @@ namespace HMS.Web.Controllers
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            byte[] result;
-            context.HttpContext.Session.TryGetValue("CurrentUser", out result);
-            if (result == null)
+            byte[] result = context.HttpContext.Session.Get("CurrentUser");
+            //string sessionvalue = context.HttpContext.Session.GetString("CurrentUser");
+            if (result==null)
             {
                 context.Result = new RedirectResult("/Account/login");
                 return;

@@ -43,6 +43,8 @@ namespace HMS.Web
             services.AddDbContext<HMSDbContext>(options => options.UseSqlServer(sqlConnection));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //session保存到内存
+            services.AddDistributedMemoryCache();
             //session服务
             services.AddSession();
             //AutoFac依赖注入

@@ -27,6 +27,9 @@ body {
 #qrCode {
     margin: 15px;
 }
+url {
+    display:none;
+}
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

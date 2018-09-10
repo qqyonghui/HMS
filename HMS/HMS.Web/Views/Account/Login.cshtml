@@ -59,7 +59,7 @@
             <div>
                 <input id="tantent" name="tantent" type="text" value="租户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='租户名'}" />
                 <input id="username" name="username" type="text" value="用户名" onfocus="this.value=''" onblur="if(this.value==''){this.value='用户名'}">
-                <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';document.getElementById('password').focus().select();">密码</span>
+                <span id="password_text" onclick="this.style.display='none';document.getElementById('password').style.display='block';$('#password').focus().select();">密码</span>
                 <input name="password" type="password" id="password" style="display:none;" onblur="if(this.value==''){document.getElementById('password_text').style.display='block';this.style.display='none'};" />
                 <input id="btn_login" value="登录" style="width:100%;" type="button">
             </div>

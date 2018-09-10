@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "Main";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HMS.Web</title>
+
+    <environment include="Development">
+        <link href="~/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/morris/morris-0.4.3.min.css" rel="stylesheet" />
+
+        <link href="~/css/custom-styles.css" rel="stylesheet" />
+        <link href="~/lib/jquery-confirm/dist/css/jquery-confirm.css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link href="~/css/custom-styles.css" rel="stylesheet" />
+        <link href="~/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/jquery-confirm/dist/css/jquery-confirm.css" rel="stylesheet" />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    </environment>
+   
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-green green panel-box">
+                        <div class="panel-left pull-left green">
+                            <i class="fa fa-eye fa-5x"></i>
+
+                        </div>
+                        <div class="panel-right pull-regiht panel-h4">
+                            <span><h4 url="/system/system/index">系统管理</h4></span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-blue panel-box">
+                        <div class="panel-left pull-left blue">
+                            <i class="fa fa-shopping-cart fa-5x"></i>
+                        </div>
+
+                        <div class="panel-right panel-title">
+                            <h4>52,160 </h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-red panel-box">
+                        <div class="panel-left pull-left red">
+                            <i class="fa fa fa-comments fa-5x"></i>
+
+                        </div>
+                        <div class="panel-right">
+                            <h3>15,823 </h3>
+                            <strong> Comments </strong>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary text-center no-boder bg-color-brown panel-box">
+                        <div class="panel-left pull-left brown">
+                            <i class="fa fa-users fa-5x"></i>
+
+                        </div>
+                        <div class="panel-right">
+                            <h3>36,752 </h3>
+                            <strong>No. of Visits</strong>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/lib/customer/jquery.metisMenu.js"></script>
+        <script src="~/lib/jquery-confirm/dist/js/jquery-confirm.js"></script>
+        <script src="~/lib/customer/custom-scripts.js"></script>
+
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/lib/jquery-confirm/dist/js/jquery-confirm.js"></script>
+    </environment>
+</body>
+</html>

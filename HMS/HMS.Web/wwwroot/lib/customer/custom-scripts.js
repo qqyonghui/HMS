@@ -1,4 +1,4 @@
-/*------------------------------------------------------
+﻿/*------------------------------------------------------
     Author : www.webthemez.com
     License: Commons Attribution 3.0
     http://creativecommons.org/licenses/by/3.0/
@@ -47,7 +47,28 @@
 				$('.navbar-side').animate({left: '-260px'});
 				$('#page-wrapper').animate({'margin-left' : '0px'}); 
 			}
-		});
+        });
+        $(".panel-box").click(function () {
+            var url = $(this).find("h4").attr("url");
+            if (url != null && url != undefined) {
+                window.location.href = url;
+            }
+            else {
+                $.alert({
+                    title: '提示！',
+                    content: '敬请期待',
+                    icon: 'fa fa-rocket',
+                    animation: 'scale',
+                    closeAnimation: 'scale',
+                    buttons: {
+                        okay: {
+                            text: '确定',
+                            btnClass: 'btn-blue'
+                        }
+                    }
+                });
+            }
+        })
     });
 
 }(jQuery));

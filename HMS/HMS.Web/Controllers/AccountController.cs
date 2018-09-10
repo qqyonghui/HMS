@@ -7,6 +7,7 @@ using HMS.Application.SystemModule;
 using HMS.Common.Helper;
 using HMS.Domin.SystemModule.Input;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace HMS.Web.Controllers
 {
