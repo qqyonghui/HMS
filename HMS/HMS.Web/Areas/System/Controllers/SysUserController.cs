@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HMS.Web.Areas.System.Controllers
 {
     [Area("System")]
-    public class SystemController : BaseController
+    public class SysUserController : BaseController
     {
         public IActionResult Index()
         {

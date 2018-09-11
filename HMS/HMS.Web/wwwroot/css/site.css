@@ -27,9 +27,15 @@ body {
 #qrCode {
     margin: 15px;
 }
-url {
-    display:none;
+.content-full {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

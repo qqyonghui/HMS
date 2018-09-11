@@ -1,0 +1,75 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<nav class="navbar-default navbar-side" role="navigation">
+    <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+
+            <li>
+                <a class="active-menu" asp-area="System" asp-controller="SysUser" asp-action="UserManager"><i class="fa fa-dashboard"></i> 用户管理</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-desktop"></i> 角色管理</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o"></i> 权限管理</a>
+            </li>
+            <li>
+                <a href="tab-panel.html"><i class="fa fa-qrcode"></i> 数据字典</a>
+            </li>
+
+            <li>
+                <a href="table.html"><i class="fa fa-table"></i>系统日志</a>
+            </li>
+            <li>
+                <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
+            </li>
+
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<div id="page-wrapper">
+    <div id="page-inner">
+        @RenderBody()
+        <!-- /. ROW  -->
+
+    </div>
+    <!-- /. PAGE INNER  -->
+</div>
